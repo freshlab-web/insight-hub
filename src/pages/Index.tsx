@@ -4,6 +4,7 @@ import TrustBar from "@/components/TrustBar";
 import ProblemSection from "@/components/ProblemSection";
 import WorkflowSection from "@/components/WorkflowSection";
 import SolutionsSection from "@/components/SolutionsSection";
+import VideoSection from "@/components/VideoSection";
 import DifferentiatorsSection from "@/components/DifferentiatorsSection";
 import ROISection from "@/components/ROISection";
 import LeadCaptureSection from "@/components/LeadCaptureSection";
@@ -18,6 +19,7 @@ const Index = () => {
       <ProblemSection />
       <WorkflowSection />
       <SolutionsSection />
+      <VideoSection />
       <DifferentiatorsSection />
       <ROISection />
       <LeadCaptureSection />
