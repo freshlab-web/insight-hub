@@ -1,20 +1,25 @@
 import { motion } from "framer-motion";
 import horusLogo from "@/assets/horus-logo.svg";
+import djiAuthorized from "@/assets/dji-authorized.png";
 
 const Navbar = () => {
   return (
     <motion.nav 
-      className="navbar-sticky"
+      className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-border/20"
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between h-16 md:h-20">
-          {/* Logo */}
-          <a href="#" className="flex items-center">
-            <img src={horusLogo} alt="Horus Smart Detections" className="h-6 md:h-8" />
-          </a>
+          {/* Logos */}
+          <div className="flex items-center gap-4 md:gap-8">
+            <a href="#" className="flex items-center">
+              <img src={horusLogo} alt="Horus Smart Detections" className="h-5 md:h-7" />
+            </a>
+            <div className="hidden sm:block h-6 w-px bg-border/30" />
+            <img src={djiAuthorized} alt="DJI Authorized Reseller" className="hidden sm:block h-4 md:h-5 opacity-80" />
+          </div>
 
           {/* CTA Button */}
           <a 
