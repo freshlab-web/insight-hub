@@ -53,8 +53,8 @@ const WorkflowSection = () => {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.15 }}
               >
-                <div className="glass-card-hover p-8 text-center h-full">
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-primary flex items-center justify-center text-sm font-bold">
+                <div className="glass-card-hover p-8 pt-10 text-center h-full">
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-primary flex items-center justify-center text-sm font-bold z-10">
                     {item.step}
                   </div>
                   
