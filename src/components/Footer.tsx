@@ -1,5 +1,5 @@
-import horusLogo from "@/assets/horus-logo.svg";
-import djiAuthorized from "@/assets/dji-authorized.png";
+const horusLogo = "https://cdn.jsdelivr.net/gh/freshlab-web/insight-hub@main/src/assets/horus-logo.svg";
+const djiAuthorized = "https://cdn.jsdelivr.net/gh/freshlab-web/insight-hub@main/src/assets/dji-authorized.png";
 
 const Footer = () => {
   return (

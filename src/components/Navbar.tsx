@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
-import horusLogo from "@/assets/horus-logo.svg";
-import djiAuthorized from "@/assets/dji-authorized.png";
+import { scrollToSection } from "@/lib/scroll";
+
+const horusLogo = "https://cdn.jsdelivr.net/gh/freshlab-web/insight-hub@main/src/assets/horus-logo.svg";
+const djiAuthorized = "https://cdn.jsdelivr.net/gh/freshlab-web/insight-hub@main/src/assets/dji-authorized.png";
 
 const Navbar = () => {
   return (
@@ -23,7 +25,8 @@ const Navbar = () => {
 
           {/* CTA Button */}
           <a 
-            href="#contato"
+            href="#rd-section-mlv5qm9d"
+            onClick={(e) => scrollToSection(e, "rd-section-mlv5qm9d")}
             className="btn-primary-glow text-sm md:text-base px-4 md:px-6 py-2 md:py-3"
           >
             Falar com Especialista

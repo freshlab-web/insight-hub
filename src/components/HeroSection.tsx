@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { Play } from "lucide-react";
-import heroImage from "@/assets/hero-dashboard.jpg";
+import { scrollToSection } from "@/lib/scroll";
+
+const heroImage = "https://cdn.jsdelivr.net/gh/freshlab-web/insight-hub@main/src/assets/hero-dashboard.jpg";
 
 const HeroSection = () => {
   return (
@@ -43,7 +45,8 @@ const HeroSection = () => {
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <motion.a
-                href="#contato"
+                href="#rd-section-mlv5qm9d"
+                onClick={(e) => scrollToSection(e, "rd-section-mlv5qm9d")}
                 className="btn-primary-glow text-center"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
@@ -53,6 +56,7 @@ const HeroSection = () => {
               
               <motion.a
                 href="#demo"
+                onClick={(e) => scrollToSection(e, "demo")}
                 className="btn-ghost flex items-center justify-center gap-2"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}

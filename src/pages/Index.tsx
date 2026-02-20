@@ -22,8 +22,8 @@ const Index = () => {
       <VideoSection />
       <DifferentiatorsSection />
       <ROISection />
-      <LeadCaptureSection />
-      <Footer />
+      {/* <LeadCaptureSection />
+      <Footer /> */}
     </div>
   );
 };

@@ -18,4 +18,13 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    rollupOptions: {
+      output: {
+        entryFileNames: `assets/index-1.js`,
+        chunkFileNames: `assets/[name]-1.js`,
+        assetFileNames: `assets/[name]-1[extname]`,
+      },
+    },
+ },
 }));

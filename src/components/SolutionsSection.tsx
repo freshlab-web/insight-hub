@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
-import solarImage from "@/assets/solar-thermal.jpg";
-import securityImage from "@/assets/security-thermal.jpg";
-import constructionImage from "@/assets/point-cloud.jpg";
+
+const solarImage = "https://cdn.jsdelivr.net/gh/freshlab-web/insight-hub@main/src/assets/solar-thermal.jpg";
+const securityImage = "https://cdn.jsdelivr.net/gh/freshlab-web/insight-hub@main/src/assets/security-thermal.jpg";
+const constructionImage = "https://cdn.jsdelivr.net/gh/freshlab-web/insight-hub@main/src/assets/point-cloud.jpg";
 
 const solutions = [
   {
