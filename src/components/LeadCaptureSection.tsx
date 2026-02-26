@@ -32,7 +32,7 @@ const LeadCaptureSection = () => {
   };
 
   return (
-    <section className="py-20 md:py-28 relative overflow-hidden" id="contato">
+    <section className="py-20 md:py-28 relative overflow-hidden" id="rd-section-mlv5qm9d">
       <div className="absolute inset-0 hex-pattern opacity-30" />
       <div className="absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent" />
       

@@ -1,23 +1,54 @@
 import { motion } from "framer-motion";
-import { Play } from "lucide-react";
-import { scrollToSection } from "@/lib/scroll";
+import { useState } from "react";
 
 const heroImage = "https://cdn.jsdelivr.net/gh/freshlab-web/insight-hub@main/src/assets/hero-dashboard.jpg";
 
+const sectors = [
+  "Energia Solar",
+  "Energia Eólica",
+  "Óleo & Gás",
+  "Mineração",
+  "Construção Civil",
+  "Segurança Patrimonial",
+  "Agronegócio",
+  "Outro"
+];
+
 const HeroSection = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    sector: ""
+  });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log("Form submitted:", formData);
+    alert("Obrigado! Entraremos em contato em breve.");
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
   return (
-    <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
-      {/* Background patterns */}
-      <div className="absolute inset-0 hex-pattern opacity-50" />
-      <div className="absolute inset-0 grid-pattern" />
-      
-      {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background" />
-      
+    <section id="rd-section-mlv5qm9d" className="relative min-h-screen flex items-center pt-20 overflow-hidden">
+      {/* Full background image */}
+      <div className="absolute inset-0">
+        <img
+          src={heroImage}
+          alt="Horus - Inteligência para Drones"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/60" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/80" />
+      </div>
+
       <div className="container relative mx-auto px-4 md:px-6 py-12 md:py-20">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Text Content */}
-          <motion.div 
+          <motion.div
             className="text-center lg:text-left"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -32,86 +63,110 @@ const HeroSection = () => {
               <span className="w-2 h-2 rounded-full bg-success animate-pulse" />
               Plataforma Monitora Ativa
             </motion.div>
-            
+
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-black leading-tight mb-6">
               Transforme Imagens de Drones em{" "}
               <span className="text-gradient-primary">Decisões de Negócio.</span>
             </h1>
-            
+
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto lg:mx-0">
-              Hardware é apenas o começo. A Horus entrega a inteligência que processa dados, 
+              Hardware é apenas o começo. A Horus entrega a inteligência que processa dados,
               identifica anomalias com IA e automatiza sua segurança e manutenção.
             </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <motion.a
-                href="#rd-section-mlv5qm9d"
-                onClick={(e) => scrollToSection(e, "rd-section-mlv5qm9d")}
-                className="btn-primary-glow text-center"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                Agendar Diagnóstico Operacional
-              </motion.a>
-              
-              <motion.a
-                href="#demo"
-                onClick={(e) => scrollToSection(e, "demo")}
-                className="btn-ghost flex items-center justify-center gap-2"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                <Play className="w-5 h-5" />
-                Ver a Plataforma em Ação
-              </motion.a>
+
+            {/* Stats inline */}
+            <div className="flex flex-wrap gap-8 justify-center lg:justify-start">
+              <div>
+                <p className="text-2xl md:text-3xl font-black text-gradient-primary">98.7%</p>
+                <p className="text-xs text-muted-foreground">Precisão IA</p>
+              </div>
+              <div>
+                <p className="text-2xl md:text-3xl font-black text-gradient-primary">10x</p>
+                <p className="text-xs text-muted-foreground">Mais rápido</p>
+              </div>
+              <div>
+                <p className="text-2xl md:text-3xl font-black text-gradient-success">0</p>
+                <p className="text-xs text-muted-foreground">Acidentes</p>
+              </div>
             </div>
           </motion.div>
-          
-          {/* Hero Visual */}
+
+          {/* Lead Form */}
           <motion.div
-            className="relative"
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
           >
-            <div className="dashboard-frame animate-float">
-              <img 
-                src={heroImage} 
-                alt="Horus Dashboard - Plataforma de Inteligência para Drones" 
-                className="w-full h-auto"
-              />
-            </div>
-            
-            {/* Floating elements */}
-            <motion.div
-              className="absolute -bottom-4 -left-4 glass-card p-4 hidden md:flex items-center gap-3"
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.8 }}
+            <form
+              onSubmit={handleSubmit}
+              className="glass-card p-8 md:p-10 space-y-5"
             >
-              <div className="w-10 h-10 rounded-full bg-success/20 flex items-center justify-center">
-                <span className="text-success text-lg">✓</span>
+              <div className="text-center mb-2">
+                <h2 className="text-xl font-bold mb-1">Agende uma Demonstração</h2>
+                <p className="text-sm text-muted-foreground">Consultoria gratuita com especialista</p>
+              </div>
+
+              <div>
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  placeholder="Nome Completo"
+                  className="input-dark"
+                  required
+                />
               </div>
               <div>
-                <p className="text-sm font-semibold">98.7% Precisão IA</p>
-                <p className="text-xs text-muted-foreground">Detecção de anomalias</p>
-              </div>
-            </motion.div>
-            
-            <motion.div
-              className="absolute -top-4 -right-4 glass-card p-4 hidden md:flex items-center gap-3"
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 1 }}
-            >
-              <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
-                <span className="text-primary text-lg">⚡</span>
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  placeholder="E-mail Corporativo"
+                  className="input-dark"
+                  required
+                />
               </div>
               <div>
-                <p className="text-sm font-semibold">Tempo Real</p>
-                <p className="text-xs text-muted-foreground">Alertas instantâneos</p>
+                <input
+                  type="tel"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  placeholder="Telefone / WhatsApp"
+                  className="input-dark"
+                  required
+                />
               </div>
-            </motion.div>
+              <div>
+                <select
+                  name="sector"
+                  value={formData.sector}
+                  onChange={handleChange}
+                  className="input-dark"
+                  required
+                >
+                  <option value="">Setor de Atuação</option>
+                  {sectors.map((sector) => (
+                    <option key={sector} value={sector}>{sector}</option>
+                  ))}
+                </select>
+              </div>
+
+              <motion.button
+                type="submit"
+                className="btn-primary-glow w-full text-center"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                Solicitar Consultoria Gratuita
+              </motion.button>
+
+              <p className="text-xs text-muted-foreground text-center">
+                Ao enviar, você concorda com nossa política de privacidade.
+              </p>
+            </form>
           </motion.div>
         </div>
       </div>

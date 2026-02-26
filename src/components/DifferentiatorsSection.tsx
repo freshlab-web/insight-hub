@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { Check, Brain, Shield, FileCheck, HeadphonesIcon } from "lucide-react";
 
+const whyHorusImg = "https://cdn.jsdelivr.net/gh/freshlab-web/insight-hub@main/src/assets/why-horus.jpg";
+
 const differentiators = [
   {
     icon: Brain,
@@ -22,9 +24,9 @@ const differentiators = [
 
 const DifferentiatorsSection = () => {
   return (
-    <section className="py-20 md:py-28 relative overflow-hidden">
+    <section className="py-24 md:py-32 relative overflow-hidden">
       <div className="absolute inset-0 grid-pattern opacity-50" />
-      
+
       <div className="container relative mx-auto px-4 md:px-6">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <motion.div
@@ -36,10 +38,10 @@ const DifferentiatorsSection = () => {
               Por que <span className="text-gradient-primary">Horus?</span>
             </h2>
             <p className="text-muted-foreground text-lg mb-8">
-              Não somos apenas uma plataforma de software. Somos seu parceiro estratégico 
+              Não somos apenas uma plataforma de software. Somos seu parceiro estratégico
               em inteligência operacional.
             </p>
-            
+
             <div className="space-y-6">
               {differentiators.map((item, index) => (
                 <motion.div
@@ -58,28 +60,37 @@ const DifferentiatorsSection = () => {
               ))}
             </div>
           </motion.div>
-          
+
+          {/* DJI Certification visual */}
           <motion.div
-            className="glass-card p-8 md:p-10"
+            className="glass-card overflow-hidden"
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <div className="text-center mb-8">
-              <p className="text-muted-foreground mb-2">Certificação Oficial</p>
-              <div className="text-3xl font-bold text-gradient-primary">DJI Enterprise</div>
-              <p className="text-sm text-muted-foreground mt-2">
-                Revenda Autorizada Brasil
-              </p>
+            <div className="relative h-48 md:h-64 overflow-hidden">
+              <img
+                src={whyHorusImg}
+                alt="Horus - Por que nos escolher"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-card to-transparent" />
             </div>
-            
-            <div className="space-y-4">
-              {["Suporte técnico especializado", "Garantia oficial de fábrica", "Treinamento certificado", "Peças e acessórios originais"].map((item, index) => (
-                <div key={index} className="flex items-center gap-3 text-sm">
-                  <Check className="w-5 h-5 text-success flex-shrink-0" />
-                  <span>{item}</span>
-                </div>
-              ))}
+
+            <div className="p-8 md:p-10">
+              <div className="text-center mb-6">
+                <div className="text-2xl font-bold text-gradient-primary mb-1">DJI Enterprise</div>
+                <p className="text-sm text-muted-foreground">Revenda Autorizada Brasil</p>
+              </div>
+
+              <div className="space-y-4">
+                {["Suporte técnico especializado", "Garantia oficial de fábrica", "Treinamento certificado", "Peças e acessórios originais"].map((item, index) => (
+                  <div key={index} className="flex items-center gap-3 text-sm">
+                    <Check className="w-5 h-5 text-success flex-shrink-0" />
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </motion.div>
         </div>

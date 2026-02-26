@@ -13,23 +13,10 @@ const Footer = () => {
           </div>
           
           {/* Links & Copyright */}
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6 pt-6 border-t border-white/5">
+          <div className="flex items-center justify-center pt-6 border-t border-white/5">
             <span className="text-muted-foreground text-sm">
               © 2025 Horus Smart Detections. Todos os direitos reservados.
             </span>
-          
-            {/* Links */}
-            <div className="flex items-center gap-6 text-sm text-muted-foreground">
-              <a href="#" className="hover:text-foreground transition-colors">
-                Loja Hardware
-              </a>
-              <a href="#" className="hover:text-foreground transition-colors">
-                Blog Técnico
-              </a>
-              <a href="#" className="hover:text-foreground transition-colors">
-                Login Monitora
-              </a>
-            </div>
           </div>
         </div>
       </div>

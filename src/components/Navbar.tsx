@@ -16,7 +16,14 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logos */}
           <div className="flex items-center gap-4 md:gap-8">
-            <a href="#" className="flex items-center">
+            <a 
+              href="#" 
+              onClick={(e) => {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
+              className="flex items-center"
+            >
               <img src={horusLogo} alt="Horus Smart Detections" className="h-5 md:h-7" />
             </a>
             <div className="hidden sm:block h-6 w-px bg-border/30" />
