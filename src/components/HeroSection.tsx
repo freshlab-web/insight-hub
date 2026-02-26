@@ -33,7 +33,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section id="rd-section-mlv5qm9d" className="relative min-h-screen flex items-center pt-20 overflow-hidden">
+    <section id="rd-section-mlv5qm9d" className="relative min-h-screen flex items-center overflow-hidden">
       {/* Full background image */}
       <div className="absolute inset-0">
         <img
